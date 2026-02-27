@@ -12,8 +12,9 @@ services:
       - DERP_DOMAIN=nderper.duckdns.org
       - DERP_ADDR=:8080      # Internal HTTP port for Caddy
       - DERP_HTTP_PORT=8080
-      - DERP_VERIFY_CLIENTS=false # Set to true if you want to restrict access
-    # Tailscale auth key is optional unless DERP_VERIFY_CLIENTS is true
+      - DERP_VERIFY_CLIENTS=true
+    volumes:
+      - /var/run/tailscale/tailscaled.sock:/var/run/tailscale/tailscaled.sock
 
   # Caddy Reverse Proxy
   caddy:
