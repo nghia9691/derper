@@ -1,0 +1,3 @@
+nderper.duckdns.org {
+    reverse_proxy derper:8080
+}
